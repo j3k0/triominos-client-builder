@@ -5,16 +5,16 @@ This is a docker image than compiles and packages the triominos-client app for i
 #### Usage
 
 ```sh
-# Prepare artifacts directory
-ARTIFACTS="`pwd`/artifacts/`date +%Y-%m-%d-%Hh%Mm%Ss`"
-mkdir -p "$ARTIFACTS"
+    # Prepare artifacts directory
+    ARTIFACTS="`pwd`/artifacts/`date +%Y-%m-%d-%Hh%Mm%Ss`"
+    mkdir -p "$ARTIFACTS"
 
-# Copy over the ssh key used to pull git repositories
-ID_RSA=`cat ~/.ssh/id_rsa | base64`
-ID_RSA_PUB=`cat ~/.ssh/id_rsa.pub | base64`
+    # Copy over the ssh key used to pull git repositories
+    ID_RSA=`cat ~/.ssh/id_rsa | base64 -w0`
+    ID_RSA_PUB=`cat ~/.ssh/id_rsa.pub | base64 -w0`
 
-# Go!
-docker run --rm -v "$ARTIFACTS:/artifacts" -e "ID_RSA=$ID_RSA" -e "ID_RSA_PUB=$ID_RSA_PUB" jeko/triominos-client-builder
+    # Go!
+    docker run --rm -v "$ARTIFACTS:/artifacts" -e "ID_RSA=$ID_RSA" -e "ID_RSA_PUB=$ID_RSA_PUB" jeko/triominos-client-builder
 ```
 
 #### SSH access
