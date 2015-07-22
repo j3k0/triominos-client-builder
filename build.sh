@@ -28,11 +28,13 @@ else
 fi
 
 service docker.io start
+sleep 1
 docker info
 
 # Configure env
 
 if test -e /artifacts; then
+	echo "Configure artifacts directory"
 	export CIRCLE_ARTIFACTS=/artifacts
 fi
 
