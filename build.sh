@@ -24,7 +24,7 @@ else
 	echo "Installing docker"
 	export DEBIAN_FRONTEND=noninteractive
 	apt-get update
-	apt-get install docker.io
+	apt-get install -y docker.io
 fi
 
 service docker.io start
