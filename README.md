@@ -14,7 +14,7 @@ This is a docker image than compiles and packages the triominos-client app for i
     ID_RSA_PUB=`cat ~/.ssh/id_rsa.pub | base64 -w0`
 
     # Go!
-    docker run --rm -v "$ARTIFACTS:/artifacts" -e "ID_RSA=$ID_RSA" -e "ID_RSA_PUB=$ID_RSA_PUB" jeko/triominos-client-builder
+    docker run --rm --privileged -v "$ARTIFACTS:/artifacts" -e "ID_RSA=$ID_RSA" -e "ID_RSA_PUB=$ID_RSA_PUB" jeko/triominos-client-builder
 ```
 
 #### SSH access
