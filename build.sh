@@ -28,7 +28,7 @@ else
 fi
 
 service docker.io start
-sleep 1
+sleep 2
 docker info
 
 # Configure env

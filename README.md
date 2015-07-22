@@ -6,7 +6,7 @@ This is a docker image than compiles and packages the triominos-client app for i
 
 ```sh
     # Prepare artifacts directory
-    ARTIFACTS="`pwd`/artifacts/`date +%Y-%m-%d-%Hh%Mm%Ss`"
+    ARTIFACTS="`pwd`/artifacts"
     mkdir -p "$ARTIFACTS"
 
     # Copy over the ssh key used to pull git repositories
