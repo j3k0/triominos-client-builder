@@ -30,6 +30,12 @@ fi
 service docker.io start
 docker info
 
+# Configure env
+
+if test -e /artifacts; then
+	export CIRCLE_ARTIFACTS=/artifacts
+fi
+
 # Checkout or update git
 
 if test -e triominos-client; then
@@ -55,3 +61,4 @@ git submodule update
 
 # Package
 ./package.sh
+
